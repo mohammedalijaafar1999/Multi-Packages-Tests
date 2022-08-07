@@ -1,0 +1,11 @@
+Button:hover {
+    background-color: rgba(125, 166, 99, 255);
+}
+
+Button:focus {
+    background-color: rgb(221, 160, 110);
+}
+
+Button:active {
+    background-color: rgb(154, 72, 69);
+}

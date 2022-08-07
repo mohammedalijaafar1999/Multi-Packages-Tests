@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/global.uss?fileID=7433441132597879392&amp;guid=00a8790314e0aa54da9fc5da236a1339&amp;type=3#global" />
+    <ui:VisualElement style="flex-direction: row; height: 100%; justify-content: flex-start;">
+        <ui:VisualElement style="width: 20%; border-left-color: rgb(163, 229, 135); border-right-color: rgb(163, 229, 135); border-top-color: rgb(163, 229, 135); border-bottom-color: rgb(163, 229, 135); border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px; background-color: rgba(0, 0, 0, 0.25);">
+            <ui:Label text="Items List" display-tooltip-when-elided="true" style="height: auto; font-size: 50px; -unity-text-align: middle-center;" />
+            <ui:Button text="Generate Item" display-tooltip-when-elided="true" name="generate-item-button" style="height: 53px;" />
+            <ui:Button text="Clear Items" display-tooltip-when-elided="true" name="clear-items-button" style="height: 53px;" />
+        </ui:VisualElement>
+        <ui:ListView focusable="true" style="width: 20%; background-color: rgba(0, 0, 0, 0.2); border-left-color: rgb(178, 83, 71); border-right-color: rgb(178, 83, 71); border-top-color: rgb(178, 83, 71); border-bottom-color: rgb(178, 83, 71); border-left-width: 6px; border-right-width: 6px; border-top-width: 6px; border-bottom-width: 6px;" />
+    </ui:VisualElement>
+</ui:UXML>
