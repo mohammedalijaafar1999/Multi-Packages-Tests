@@ -10,6 +10,7 @@ public class Person
     private string id;
     private string name;
 
+    // it's a class
     public Person()
     {
         id = "";
@@ -34,27 +35,38 @@ public class FirstRunLogic : MonoBehaviour
 
     private List<Person> _persons = new List<Person>();
 
+    private ListView personsListView;
+    
     private Button generateItemButton;
     private Button clearItemsButton;
+
+    private Label itemsCountLabel;
+
     private void Start()
     {
+        //document ui setup
+        var root = GetComponent<UIDocument>().rootVisualElement;
         
+        //bind the label with the list count
+        itemsCountLabel = root.Q<Label>("items-count");
+        itemsCountLabel.text = "items count: " + _persons.Count.ToString();
+
+        generateItemButton = root.Q<Button>("generate-item-button");
+        generateItemButton.Focus();
+        generateItemButton.clicked += GenerateItem;
+
+        clearItemsButton = root.Q<Button>("clear-items-button");
+        clearItemsButton.clicked += ClearItems;
+
+        personsListView = root.Q<ListView>("personsListView");
+        
+        //personsListView.
+
         //initial set of random people
         for (int i = 0; i < 5; i++)
         {
             GenerateItem();
         }
-        
-        //document ui setup
-        var root = GetComponent<UIDocument>().rootVisualElement;
-
-        generateItemButton = root.Q<Button>("generate-item-button");
-        generateItemButton.Focus();
-        generateItemButton.clicked += GenerateItem;
-        
-        clearItemsButton = root.Q<Button>("clear-items-button");
-        clearItemsButton.clicked += ClearItems;
-
     }
 
     public void ClearItems()
@@ -78,6 +90,8 @@ public class FirstRunLogic : MonoBehaviour
         p.Name = GenerateName(rnd.Next(3,10));
         
         _persons.Add(p);
+        
+        itemsCountLabel.text = "items count: " + _persons.Count.ToString();
         
         Debug.Log(p.ID+ " - " + p.Name);
 
